@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+* {
+    margin: 0;
+    font-family: "PT Sans", serif;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #0e0e0e;
+    color: white;
+    overflow: hidden;
+}
+
+.intro-section {
+    text-align: center;
+    position: relative;
+    max-width: 600px;
+}
+
+.content {
+    opacity: 0;
+    animation: fadeIn 2s ease-out forwards;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.3s ease-in-out;
+}
+
+.content:hover {
+    transform: scale(1.05);
+}
+
+.title span, .subtitle span {
+    display: inline-block;
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.5s forwards;
+}
+
+.title span:nth-child(1), .subtitle span:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.title span:nth-child(2), .subtitle span:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.title {
+    font-size: 3rem;
+    color: #FFD700;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.subtitle {
+    font-size: 1.2rem;
+    color: #FFD700;
+    margin-bottom: 40px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.image-circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 400px;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circle-image {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    opacity: 0.6;
+    transition: transform 0.5s ease, opacity 0.3s ease;
+    position: absolute;
+    animation: rotateAnimation 15s infinite linear;
+}
+
+.image1 { top: 0; left: 50%; transform: translateX(-50%) scale(1); }
+.image2 { top: 25%; right: 0; transform: translateY(-50%) scale(0.9); }
+.image3 { bottom: 0; left: 50%; transform: translate(-50%, 50%); }
+.image4 { bottom: 25%; left: 0; transform: translateY(-50%); }
+
+.circle-image:hover {
+    opacity: 1;
+    transform: scale(1.4) rotate(15deg);
+    animation: bounce 0.5s forwards ease-out;
+}
+
+.title:hover,
+.subtitle:hover {
+    transform: scale(1.1);
+    animation: glow 1s ease-in-out forwards;
+}
+
+@keyframes rotateAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes bounce {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.5); }
+    100% { transform: scale(1.2); }
+}
+
+@keyframes glow {
+    0% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700; }
+    50% { text-shadow: 0 0 20px #FFD700, 0 0 30px #FFD700; }
+    100% { text-shadow: 0 0 10px #FFD700, 0 0 20px #FFD700; }
+}
+
+.vision {
+    max-width: 800px; 
+    padding: 20px;
+    margin: 20px; 
+    opacity: 0; 
+    transform: translateY(50px); 
+    animation: slideIn 1s ease-out forwards; 
+    animation-delay: 1s; 
+}
+
+.content1 {
+    text-align: center; 
+}
+
+@keyframes slideIn {
+    to {
+        opacity: 1; 
+        transform: translateY(0);
+    }
+}
